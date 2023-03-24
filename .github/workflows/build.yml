@@ -1,8 +1,11 @@
 name: Chemdah Build
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: "0 0 * * *" 
+  
+  # allows to manually run the job at any time
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
